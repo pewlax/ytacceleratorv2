@@ -19,18 +19,18 @@ function App() {
       title: "Main Channel's Stats",
       metric: "17,8M Views",
       period: "Last 30 Days",
-      image: "Assets/17.5M views on MW.png"
+      image: "https://6toa05wefv.ufs.sh/f/qnV82iULP0I7Ht1FnFXOtVvCwk1mzYsMZnfUiuo9e8AHpFcW"
   
     },
     {
       title: "One Video Changed Everything",
       metric: "$4,5k From One Video",
-      image: "Assets/Snímka obrazovky 2025-06-21 185427.png"
+      image: "https://6toa05wefv.ufs.sh/f/qnV82iULP0I7zBG1Tof5UGZ26hI9BPktFdfKwjiJSHueXgz1"
     },
     {
       title: "Extra $1,5k-$6k/mo From Your Laptop",
       metric: "4 Figures Monthly",
-      image: "Assets/Snímka obrazovky 2025-06-21 194325.png"
+      image: "https://6toa05wefv.ufs.sh/f/qnV82iULP0I7di3lrzw2YoCQkvpJKziA3M9e6WEcr84atVqP"
     },
   ];
 

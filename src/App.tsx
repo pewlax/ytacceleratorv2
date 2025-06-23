@@ -43,17 +43,17 @@ function App() {
     {
       icon: <Eye className="w-8 h-8" />,
       title: "Get Paid to Talk About Stuff You Like",
-      description: "You can actually earn money by making videos about things you’re interested in. It’s quick, simple, and doesn’t feel like work."
+      description: "You can actually earn money by making videos about things you're interested in. It's quick, simple, and doesn't feel like work."
     },
     {
       icon: <BarChart3 className="w-8 h-8" />,
       title: "Earn Money While You Sleep",
-      description: "Your videos can keep getting views and earning ad revenue around the clock — even while you’re asleep or out living your life."
+      description: "Your videos can keep getting views and earning ad revenue around the clock — even while you're asleep or out living your life."
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Grow With Little Effort",
-      description: "You don’t need to grind for 10 hours — with a simple system, you can build your channel in your spare time and still see results."
+      description: "You don't need to grind for 10 hours — with a simple system, you can build your channel in your spare time and still see results."
     },
   ];
 
@@ -132,7 +132,7 @@ function App() {
             Profit Generated From One Channel
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex justify-center">
             <button 
               onClick={handleBookCall}
               className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-violet-600 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
@@ -140,10 +140,6 @@ function App() {
               <Calendar className="w-5 h-5" />
               <span>Book A Call</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-4 border border-purple-500/50 rounded-full font-semibold text-lg hover:bg-purple-500/10 transition-all duration-300 flex items-center space-x-2">
-              <Play className="w-5 h-5" />
-              <span>Watch Success Stories</span>
             </button>
           </div>
         </div>
@@ -166,12 +162,11 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Results That 
-              <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent"> Speak </span>
-              Volumes
+              Proof It 
+              <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent"> Works </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Real analytics from creators who transformed their channels in just 90 days
+              Just ONE Channel Can Change Your Life
             </p>
           </div>
 

@@ -5,6 +5,41 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YouTube Shorts Coaching Landing Page</title>
+<style>
+  .alert-banner {
+    background-color: #af11d6;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .alert-banner span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  body {
+    padding-top: 40px;
+  }
+</style>
+
+<div class="alert-banner">
+  <span>
+    🚨 Price increases to $997 on July 1st — Act now to lock in the current rate! 🚨
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    🚨 Price increases to $997 on July 1st — Act now to lock in the current rate! 🚨
+  </span>
+</div>
   </head>
   <body>
     <div id="root"></div>

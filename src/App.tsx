@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Play, TrendingUp, Users, Calendar, ArrowRight, BarChart3, Eye, MessageCircle, Share2, Star, CheckCircle } from 'lucide-react';
+import { Play, TrendingUp, Users, Calendar, ArrowRight, BarChart3, Eye, MessageCircle, Share2, Star, CheckCircle, Crown, Zap } from 'lucide-react';
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -72,6 +72,38 @@ function App() {
       step: "03",
       title: "Scaling Up",
       description: "Once your videos take off, I'll help you start earning and show you how to build a team so you can run more channels without doing everything yourself."
+    }
+  ];
+
+  const pricingPackages = [
+    {
+      name: "Starter Package",
+      price: "$997",
+      originalPrice: "$2,997",
+      icon: <Play className="w-8 h-8" />,
+      features: [
+        "Channel setup guidance, niche selection, custom-made logo, and channel warm-up process",
+        "Daily, detailed video reviews and feedback",
+        "Monthly analysis and strategy 1-on-1 calls with Steve",
+        "Access to my editing templates to speed up your editing and make it look pro",
+        "Access to an exclusive Discord community with like-minded individuals",
+        "Coaching is for 90 days, but if we don't hit 5M views, we'll keep working together for another 90 days (or sooner if we hit the goal earlier)"
+      ],
+      popular: true
+    },
+    {
+      name: "Builder Package",
+      price: "$7,997",
+      originalPrice: "$11,997",
+      icon: <Crown className="w-8 h-8" />,
+      features: [
+        "Everything in Package 1",
+        "Weekly 1-on-1 strategy calls with Steve",
+        "Learn how to edit like a pro with pre-recorded lessons",
+        "Learn how to scale to 5+ figures a month (up to millions/month) and build your own team and YouTube empire",
+        "(The more channels you run, the more you make. There are creators in this space doing $1M/month.)"
+      ],
+      popular: false
     }
   ];
 
@@ -279,6 +311,93 @@ function App() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="relative z-10 px-6 md:px-8 py-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Our 
+              <span className="bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent"> Packages </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Pick the package that matches where you're at, and where you want to go.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {pricingPackages.map((pkg, index) => (
+              <div 
+                key={index}
+                className={`relative bg-gray-900/50 backdrop-blur-sm border rounded-3xl p-8 hover:transform hover:scale-105 transition-all duration-300 flex flex-col ${
+                  pkg.popular 
+                    ? 'border-purple-500/60 shadow-2xl shadow-purple-500/20' 
+                    : 'border-purple-500/20 hover:border-purple-500/40'
+                }`}
+              >
+                {pkg.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-to-r from-purple-600 to-violet-600 px-6 py-2 rounded-full text-sm font-bold flex items-center space-x-2">
+                      <Zap className="w-4 h-4" />
+                      <span>MOST POPULAR</span>
+                    </div>
+                  </div>
+                )}
+
+                <div className="text-center mb-8">
+                  <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center ${
+                    pkg.popular 
+                      ? 'bg-gradient-to-r from-purple-600 to-violet-600' 
+                      : 'bg-gradient-to-r from-purple-600/80 to-violet-600/80'
+                  }`}>
+                    {pkg.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
+                  <div className="flex items-center justify-center space-x-3 mb-2">
+                    <span className="text-4xl font-bold text-purple-400">{pkg.price}</span>
+                    <span className="text-xl text-gray-400 line-through">{pkg.originalPrice}</span>
+                  </div>
+                  <div className="text-sm text-green-400 font-semibold">
+                    Save {Math.round((1 - parseInt(pkg.price.replace('$', '').replace(',', '')) / parseInt(pkg.originalPrice.replace('$', '').replace(',', ''))) * 100)}%
+                  </div>
+                </div>
+
+                <div className="space-y-4 mb-8 flex-grow">
+                  {pkg.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-300 leading-relaxed">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <button 
+                  onClick={handleBookCall}
+                  className={`w-full py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 mt-auto ${
+                    pkg.popular
+                      ? 'bg-gradient-to-r from-purple-600 to-violet-600 hover:shadow-2xl hover:shadow-purple-500/25'
+                      : 'bg-gradient-to-r from-purple-600/80 to-violet-600/80 hover:from-purple-600 hover:to-violet-600 hover:shadow-xl hover:shadow-purple-500/20'
+                  }`}
+                >
+                  Get Started Now
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-400 mb-4">
+              Not sure which package is right for you?
+            </p>
+            <button 
+              onClick={handleBookCall}
+              className="text-purple-400 hover:text-purple-300 font-semibold underline transition-colors duration-300"
+            >
+              Book a free consultation call to discuss your goals
+            </button>
           </div>
         </div>
       </section>
